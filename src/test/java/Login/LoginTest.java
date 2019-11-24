@@ -15,7 +15,7 @@ import Pages.WordpressHome;
 import seleniumtests.BasePage;
 import seleniumtests.RepositoryManager;
 
-public class LoginTest extends BasePage{
+public class LoginTest{
 	
 	WebDriver driver;
 	LandingPage lp;
