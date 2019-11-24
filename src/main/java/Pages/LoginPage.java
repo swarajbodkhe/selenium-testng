@@ -18,7 +18,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import seleniumtests.BasePage;
+import Common.BasePage;
 
 public class LoginPage {
 	@FindBy(how=How.XPATH,using="//a[text()='Log in']")

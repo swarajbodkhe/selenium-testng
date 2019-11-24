@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import seleniumtests.BasePage;
-import seleniumtests.RepositoryManager;
+import Common.BasePage;
+import Common.RepositoryManager;
 
 public class LandingPage {
 	@FindBy(how=How.XPATH,using="//li//a[text()='Log in']")

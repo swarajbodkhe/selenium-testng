@@ -1,4 +1,4 @@
-package seleniumtests;
+package Common;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +26,7 @@ public class BasePage {
 		System.setProperty("webdriver.chrome.driver",
 				System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver.exe");
 		driver = new ChromeDriver();
+		wt=new WebDriverWait(this.driver,20);
 	}
 
 	public WebDriver getDriver() {
@@ -40,7 +41,6 @@ public class BasePage {
 	}
 	
 	public void ClickUsingJS(WebElement e) {
-		wt=new WebDriverWait(driver, 20);
 		wt.until(ExpectedConditions.elementToBeClickable(e));
 		
 		JavascriptExecutor js=(JavascriptExecutor)driver;
@@ -48,8 +48,15 @@ public class BasePage {
 	}
 	
 	public void waitForVisibility(WebElement e) {
-		wt=new WebDriverWait(this.driver,20);
 		wt.until(ExpectedConditions.visibilityOf(e));
+	}
+	
+	public boolean IsOnPage(String pageTitle) {
+		return this.driver.getTitle().contains(pageTitle);
+	}
+	
+	public void waitForElementToBeClickable(WebElement e) {
+		wt.until(ExpectedConditions.elementToBeClickable(e));
 	}
 
 }
